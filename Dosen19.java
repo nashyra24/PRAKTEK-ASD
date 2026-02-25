@@ -1,46 +1,32 @@
+package Praktikum03;
+
 public class Dosen19 {
-
-    String idDosen;
+    String kode;
     String nama;
-    boolean statusAktif;
-    int tahunBergabung;
-    String bidangKeahlian;
+    Boolean jenisKelamin; // true = Laki-laki, false = Perempuan
+    int usia;
 
-    Dosen19() {
-        idDosen = "Belum diisi";
-        nama = "Belum diisi";
-        statusAktif = false;
-        tahunBergabung = 0;
-        bidangKeahlian = "Belum diisi";
-    }
-
-    Dosen19(String idDosen, String nama, boolean statusAktif,
-            int tahunBergabung, String bidangKeahlian) {
-
-        this.idDosen = idDosen;
+    // Constructor (HARUS sama dengan nama class)
+    public Dosen19(String kode, String nama, Boolean jenisKelamin, int usia) {
+        this.kode = kode;
         this.nama = nama;
-        this.statusAktif = statusAktif;
-        this.tahunBergabung = tahunBergabung;
-        this.bidangKeahlian = bidangKeahlian;
+        this.jenisKelamin = jenisKelamin;
+        this.usia = usia;
     }
 
-    void tampilInformasi() {
-        System.out.println("ID Dosen        : " + idDosen);
-        System.out.println("Nama            : " + nama);
-        System.out.println("Status Aktif    : " + (statusAktif ? "Aktif" : "Tidak Aktif"));
-        System.out.println("Tahun Bergabung : " + tahunBergabung);
-        System.out.println("Bidang Keahlian : " + bidangKeahlian);
-    }
+    // Method untuk menampilkan data dosen
+    public void tampilData() {
+        String jk;
+        if (jenisKelamin) {
+            jk = "Laki-laki";
+        } else {
+            jk = "Perempuan";
+        }
 
-    void setStatusAktif(boolean status) {
-        statusAktif = status;
-    }
-
-    int hitungMasaKerja(int thnSkrg) {
-        return thnSkrg - tahunBergabung;
-    }
-
-    void ubahKeahlian(String bidang) {
-        bidangKeahlian = bidang;
+        System.out.println("Kode          : " + kode);
+        System.out.println("Nama          : " + nama);
+        System.out.println("Jenis Kelamin : " + jk);
+        System.out.println("Usia          : " + usia);
+        System.out.println("-----------------------------");
     }
 }
